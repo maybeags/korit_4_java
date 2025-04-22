@@ -55,14 +55,19 @@ public class Operator01 {
 //        num1 /= 5;                      // num1 = num1 / 5;
 //        System.out.println(num1);
 
-        int j = 10;
-        System.out.println(j);
-        System.out.println(j++);    // 변수명++ : 코드를 실행시킨 후에 j에 1을 더함
-        System.out.println(j);      // 그래서 다시 j를 출력시켰을 때 여기가 11
-        System.out.println(++j);    // ++변수명 : 코드를 실행시키기 전에 j에 1을 더함 - 12
-        System.out.println(j);      // 결과값은 12
-        System.out.println(j--);    // 변수명-- : 코드를 실행시킨 후에 j에 1을 뺌.
-        System.out.println(j);
-        System.out.println(--j);    // --변수명 : 코드를 실행시키기 전에 j에 1을 뺌 - 10
+//        int j = 10;
+//        System.out.println(j);
+//        System.out.println(j++);    // 변수명++ : 코드를 실행시킨 후에 j에 1을 더함
+//        System.out.println(j);      // 그래서 다시 j를 출력시켰을 때 여기가 11
+//        System.out.println(++j);    // ++변수명 : 코드를 실행시키기 전에 j에 1을 더함 - 12
+//        System.out.println(j);      // 결과값은 12
+//        System.out.println(j--);    // 변수명-- : 코드를 실행시킨 후에 j에 1을 뺌.
+//        System.out.println(j);
+//        System.out.println(--j);    // --변수명 : 코드를 실행시키기 전에 j에 1을 뺌 - 10
+
+        int age = 10;
+        System.out.println("제 나이는 " + age + "살입니다.");
+        System.out.println("내년에는 " + (age + 1) + "살이 됩니다.");
+        // Operator02 를 생성하고 -> main 메서드를 적용하세요
     }
 }
