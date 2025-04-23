@@ -1,4 +1,7 @@
 package ch06_condition;
+
+import java.util.Scanner;
+
 /*
     Condition07 파일을 확인하시면
     점수를 입력 받아서 등급을 산출을 했었습니다.
@@ -21,9 +24,42 @@ package ch06_condition;
  */
 public class Condition12 {
     public static void main(String[] args) {
-        int score = 0;
-        int changedScore = score / 10;
+        Scanner scanner = new Scanner(System.in);
+        int score;
+        int changedScore;
+        String grade;
+        System.out.print("점수를 입력하세요 >>> ");
+        score = scanner.nextInt();
+        changedScore = score / 10;
 
-        System.out.println(changedScore);
+        // score가 100 초과 0 미만인 입력을 거르는 if 조건문
+
+        // 통과한다면 switch문
+        if(score < 0 || score > 100) {
+            grade = "x";
+        } else {        // 0 <= score <= 100의 범위를 충족하면 이하의 실행문이 실행됨.
+            switch (changedScore) {
+                case 10:
+                case 9:
+                    grade = "A";
+                    break;
+                case 8:
+                    grade = "B";
+                    break;
+                case 7:
+                    grade = "C";
+                    break;
+                case 6:
+                    grade = "D";
+                    break;
+                default:
+                    grade = "F";
+            }
+        }
+
+        System.out.println("점수는 " + score + "점이고, 학점은 " + grade + "학점입니다.");
+
+
+        // ch07_loops -> Loop01 -> main
     }
 }
