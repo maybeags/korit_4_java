@@ -37,19 +37,28 @@ public class Condition10 {
         int year = scanner.nextInt();
 
         // boolean 자료형의 변수명은 is로 시작하는 일이 많습니다.
-        boolean isLeapYear = ((year % 4 == 0 && year % 100 != 0) || (year % 400 ==0));
-
-       String result = isLeapYear ? "윤년입니다" : "윤년이 아닙니다";
-       System.out.println(year + "년은 " + result);
+//        boolean isLeapYear = ((year % 4 == 0 && year % 100 != 0) || (year % 400 ==0));
+//
+//       String result = isLeapYear ? "윤년입니다" : "윤년이 아닙니다";
+//       System.out.println(year + "년은 " + result);
 
 
        // 이제 그러면 음수 연도를 걸러내기 위해서는 어떻게 할 수 있냐면
-        String result2 = "";
-        if (year < 0 ) {
-            result2 = "불가능한 연도 입력입니다";
-        } else { // 그러면 얘는 0 이상
-            result2 = isLeapYear ? "윤년입니다" : "윤년이 아닙니다";
-        }
-        System.out.println(year + "년은 " + result2);
+//        String result2 = "";
+//        if (year < 0 ) {
+//            result2 = "불가능한 연도 입력입니다";
+//        } else { // 그러면 얘는 0 이상
+//            result2 = isLeapYear ? "윤년입니다" : "윤년이 아닙니다";
+//        }
+//        System.out.println(year + "년은 " + result2);
+
+        // 중첩 삼항 연산자
+        String result3 = year <= 0 ? "불가능한 연도 입력입니다."
+                : ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+                ? "윤년입니다."
+                : "윤년이 아닙니다.";
+
+        System.out.println(year + "년은 " + result3);
+
     }
 }
