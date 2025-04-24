@@ -12,7 +12,6 @@ public class Method03 {
             3 과목의 점수를 입력하세요 >>> 95
             총합은 285.0이며, 평균은 95.0입니다.
           */
-
         calculateAvgScore();
     }
     public static void calculateAvgScore() {
