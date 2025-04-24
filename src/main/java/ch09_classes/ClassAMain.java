@@ -1,5 +1,7 @@
 package ch09_classes;
 
+import java.util.Scanner;
+
 public class ClassAMain {
     public static void main(String[] args) {
         // 객체 생성
@@ -55,5 +57,15 @@ public class ClassAMain {
             20250003 학번의 학생의 이름은 김삼이고, 4.5점입니다.
             가 출력될 수 있도록 작성하시오.
          */
+        Scanner scanner = new Scanner(System.in);
+        ClassA classA3 = new ClassA();
+        System.out.print("이름을 입력하세요 >>> ");
+        classA3.name = scanner.nextLine();
+        System.out.print("번호를 입력하세요 >>> ");
+        classA3.num = scanner.nextInt();
+        System.out.print("점수를 입력하세요 >>> ");
+        classA3.score = scanner.nextDouble();
+
+        classA3.displayProfile();
     }
 }
