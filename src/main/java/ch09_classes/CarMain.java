@@ -11,8 +11,9 @@ public class CarMain {
         car1.drive();
         car2.drive();
 
-        car1.brake();
-        car2.brake();
+        System.out.println(car1.brake());
+        System.out.println(car2.brake());
+
 
         car1.displayCarInfo();
         car2.displayCarInfo();
