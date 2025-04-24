@@ -44,6 +44,37 @@ public class Method02 {
         학번 : 20250003
         이름 : 김삼
      */
+    public static void registerStudent() {
+        // 내부에 Scanner를 따로 import
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("학번을 입력하세요 >>> ");
+        int studentCode = scanner.nextInt();
+        System.out.print("이름을 입력하세요 >>> ");
+        String name = scanner.next();
+        System.out.println("학번 : " + studentCode);
+        System.out.println("이름 : " + name);
+    }
+
+
+    public static void registerStudent2(int count) {
+        Scanner scanner = new Scanner(System.in);
+        for( int i = 0 ;  i < count ; i++ ) {
+            System.out.print("학번을 입력하세요 >>> ");
+            int studentCode = scanner.nextInt();
+            System.out.print("이름을 입력하세요 >>> ");
+            String name = scanner.next();
+            System.out.println("학번 : " + studentCode);
+            System.out.println("이름 : " + name);
+        }
+    }
+
+    public static void registerStudent3(int count) {
+        for( int i = 0 ;  i < count ; i++ ) {
+            registerStudent();      // 메서드 내에 메서드를 호출하는 것이 가능 -> 재사용성의 예시
+        }
+    }
+
+
 
     public static void main(String[] args) {
         // 여기서는 호출만 할겁니다.
@@ -52,15 +83,26 @@ public class Method02 {
         System.out.print("몇 명의 학생을 등록하시겠습니까? >>> ");
         int studentNum = scanner.nextInt();
 
-        // for를 사용한다면
-        for (int i ...) {
-            registerStudent();
-        }
+        // call2() 유형으로 registerStudent2()를 정의할 예정인데,
+        registerStudent2(studentNum);    // studentNum이라는 argument가
+        // method 정의 시에 for / while문의 한계값으로 사용되어야 한다는 점을 생각하시면 됩니다.
 
-        // while을 사용한다면
-        int num = 0;
-        while(num < 어쩌고) {
-            registerStudent();
-        }
+
+
+
+
+
+        // 메서드를 반복 실행하기 위한 반복문 작성
+        // # 1 for문 사용
+//        for (int i = 0 ; i < studentNum ; i++) {
+//            registerStudent();
+//        }
+
+        // # 2 while문 사용
+//        int num = 0;
+//        while (num < studentNum) {
+//            registerStudent();
+//            num++;
+//        }
     }
 }
