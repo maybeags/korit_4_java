@@ -8,6 +8,7 @@ public class Person {
     // 작성하시오.
 
     public Person() {
+        System.out.println("기본 생성자를 통해 Person 클래스의 인스턴스가 생성되었습니다.");
     }
 
     public Person(String name) {
@@ -28,6 +29,7 @@ public class Person {
     }
 
     public void setName(String name) {
+        System.out.println("이름이 입력되었습니다. 현재 이름 : " + name);
         this.name = name;
     }
 
@@ -35,7 +37,7 @@ public class Person {
         return age;
     }
 /*
-    이제 setAge를 자동완성한 것을 기본으로 두고, 편집할겁니다.
+    이제 setName, setAge를 자동완성한 것을 기본으로 두고, 편집할겁니다.
     나이가 0 미만이거나 200 초과인 age가 매개변수로 들어오게 된다면,
     객체의 속성에 들어갈 수 없도록 할 예정입니다.
     md 파일을 참조하여 setAge를 완성하고
@@ -55,7 +57,14 @@ public class Person {
     변경 후 나이 : 21
  */
     public void setAge(int age) {
+        if (age < 0 || age > 200) {
+            System.out.println("불가능한 나이 입력입니다. 현재 나이 " + this.age);
+            return;
+        }
+        System.out.println("나이가 입력되었습니다.");
+        System.out.println("변경 전 나이 : " + this.age);
         this.age = age;
+        System.out.println("변경 후 나이 : " + this.age);
     }
 
     // showInfo()도 정의하시오
