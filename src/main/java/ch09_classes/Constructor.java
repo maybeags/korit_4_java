@@ -40,5 +40,30 @@ public class Constructor {
     };
 
     // 매개변수 생성자 # 2
-//    Constructor(String name)
+    Constructor(String title) { // 추후에는 매개변수명과 속성명을 일치시킬겁니다.
+        this.name = title;
+        System.out.println("String 매개변수를 필수로 요구하는 매개변수 생성자로 객체를 생성");
+        System.out.println("RequiredArgsConstructor");
+    }
+
+    // 매개변수 생성자 # 3
+    Constructor(int num, String name) {
+        this.num = num;
+        this.name = name;
+        System.out.println("모든 필드를 필수로 요구하는 매개변수 생성자");
+        System.out.println("AllArgsConstructor");
+    }
+
+    Constructor(String name, int num) {
+        this.num = num;
+        this.name = name;
+        System.out.println("모든 필드를 필수로 요구하는 매개변수 생성자");
+        System.out.println("AllArgsConstructor");
+    }
+
+    // 메서드도 정의해보겠습니다.
+    void displayInfo() {
+        System.out.println("이 객체의 num 값 : " + num);
+        System.out.println("이 객체의 name 값 : " + name);
+    }
 }
