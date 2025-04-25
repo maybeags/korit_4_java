@@ -2,8 +2,8 @@ package ch10_setter_getter;
 
 public class Person {
     // 필드 선언
-    String name;
-    int age;
+    private String name;
+    private int age;
     // 기본 생성자, 매개변수가 하나인 생성자 두 개, 매개변수 두 개인 매개변수 생성자 하나(name, age순)를
     // 작성하시오.
 
@@ -67,6 +67,9 @@ public class Person {
         System.out.println("변경 후 나이 : " + this.age);
     }
 
+    // 스트링값.length() 하면 스트링 데이터의 길이가 int로 반환됨
+    // ex) "안녕하세요".length()의 결과값 : 5
+
     // showInfo()도 정의하시오
     // 실행 예
     // 이름 : 김일
@@ -74,5 +77,9 @@ public class Person {
     public void showInfo() {
         System.out.println("이름 : " + name);
         System.out.println("나이 : " + age);
+    }
+
+    public void getName2() {
+        System.out.println(name + " 님 반갑습니다.");
     }
 }
