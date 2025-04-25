@@ -59,6 +59,7 @@ package ch11_access_modifier;
 100000원이 출금되었습니다. 현재 잔액 : 400000원           # account2에 대한 출금(십만원 출금)
 200000원이 입금되었습니다. 현재 잔액 : 600000원           # account2에 대한 입금(이십만원 입금)
 
+displayInfo()
 최종 계좌 정보
 계좌 소유자 : 홍길동
 계좌 번호 : 123456
@@ -69,4 +70,129 @@ package ch11_access_modifier;
 현재 잔액 : 600000원                 (육십만원)
  */
 public class Bank {
+    private int accountNum;
+    private String accountHolder;
+    private int balance;
+    private int pinNumber;
+
+    // 생성자
+
+    public Bank() {
+    }
+
+    public Bank(int accountNum) {
+        this.accountNum = accountNum;
+    }
+
+    public Bank(String accountHolder) {
+        this.accountHolder = accountHolder;
+    }
+
+    public Bank(int accountNum, String accountHolder) {
+        this.accountNum = accountNum;
+        this.accountHolder = accountHolder;
+    }
+
+    public Bank(int accountNum, String accountHolder, int balance) {
+        this.accountNum = accountNum;
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+    }
+
+    public Bank(int accountNum, String accountHolder, int balance, int pinNumber) {
+        this.accountNum = accountNum;
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+        this.pinNumber = pinNumber;
+    }
+
+    // settter / getter
+
+    public int getAccountNum() {
+        return accountNum;
+    }
+
+    public void setAccountNum(int accountNum) {
+        this.accountNum = accountNum;
+    }
+
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+
+    public void setAccountHolder(String accountHolder) {
+        this.accountHolder = accountHolder;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    // 얘는 수정이 필요합니다.
+    public void setBalance(int balance) {
+        // 0원 이하는 입력 불가능
+        if (balance < 1) {
+            System.out.println("불가능한 입력 금액입니다.");
+            return;
+        }
+            this.balance = balance;
+    }
+
+    public int getPinNumber() {
+        return pinNumber;
+    }
+
+    // 얘도요.
+    public void setPinNumber(int pinNumber) {
+        if(pinNumber < 0 || pinNumber > 9999) {
+            System.out.println("불가능한 비밀번호입니다");
+            return;
+        }
+        this.pinNumber = pinNumber;
+    }
+
+
+    // 나머지 메서드들
+
+    public void deposit(int amount, int inputPin) {
+        if (this.pinNumber != inputPin) {
+            // 종료
+            System.out.println("비밀번호가 틀렸습니다.");
+            return;
+        }
+        // 비밀번호와 입력 비밀번호가 동일하다면 진행
+        if (amount < 0) {
+            System.out.println("불가능한 입금 금액입니다.");
+            return;
+        }
+        balance += amount;
+//        System.out.println("입금 성공! 현재 잔액 : " + this.balance); // 오류 안남
+        System.out.println("입금 성공! 현재 잔액 : " + balance);    // 오류 안남
+    }
+
+    public void withdraw(int amount, int inputPin) {
+        if (this.pinNumber != inputPin) {
+            // 종료
+            System.out.println("비밀번호가 틀렸습니다.");
+            return;
+        }
+        if (amount < 1) {
+            System.out.println("불가능한 출금 금액입니다.");
+            return;
+        }
+        if (balance - amount < 0) {
+            System.out.println("잔액이 부족하여 출금할 수 없습니다.");
+            return;
+        }
+        balance -= amount;
+        System.out.println(amount + "원이 출금되었습니다. 현재 잔액 : " + balance);
+    }
+
+    public void showAccountInfo() {}
+
+    public void displayInfo() {
+        System.out.println("\n계좌 소유자 : " + accountHolder);
+        System.out.println("계좌 번호 : " + accountNum);
+        System.out.println("현재 잔액 : " + balance + "\n");
+    }
 }
