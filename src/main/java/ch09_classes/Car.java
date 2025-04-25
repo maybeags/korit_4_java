@@ -4,6 +4,8 @@ public class Car {
     // 필드 선언
     String color;
     int speed;
+    // 생성자를 배우면 해결되는 개념
+//    String eval2 = (speed > 100 ? "빠릅니다." : "그냥저냥입니다.");
 
     // 메서드 정의
     public void drive() {
@@ -39,4 +41,6 @@ public class Car {
          car2의 색깔 노랑 / 속도 200으로 생성한 후
          각각 drive()/brake()/displayCarInfo()를 실행하시고, 콘솔창에 결과를 출력하시오.
      */
+
+    // Constructor / ConstructorMain->main
 }
