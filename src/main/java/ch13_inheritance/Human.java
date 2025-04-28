@@ -23,5 +23,34 @@ package ch13_inheritance;
 
 
  */
-public class Human {
+public class Human extends Animal{
+    // 기본 생성자 정의
+    public Human() {
+        System.out.println("기본생성자를 통해 Human 클래스의 인스턴스가 생성되었습니다.");
+    }
+    // getter들 재정의
+
+    @Override
+    public String getAnimalName() {
+        return "안녕하세요. " + super.getAnimalName() + "입니다.";
+    }
+
+    @Override
+    public int getAnimalAge() {
+        System.out.println("올해 제 나이는 " + super.getAnimalAge() + "살입니다. 내년에는 " + (super.getAnimalAge()+1) + "살이 됩니다.");
+        return super.getAnimalAge();
+    }
+
+    // move 메서드 재정의
+
+    @Override
+    public void move() {
+        System.out.println("사람이 두 발로 걷습니다.");
+    }
+
+
+    // 고유 메서드 read() 정의
+    public void read(String book) {
+        System.out.println(super.getAnimalName() + "이 " + book + "을 읽는 중입니다.");
+    }
 }
