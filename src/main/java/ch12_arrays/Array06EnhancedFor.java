@@ -26,16 +26,44 @@ public class Array06EnhancedFor {
     public static void main(String[] args) {
         int[] numbers = new int[200];
         // 1부터 200까지 대입하시오.
+        for ( int i = 0 ; i < numbers.length ; i++ ){
+            numbers[i] = i+1;
+        }
 
-        // for문을 통해 1 2 3 4 5 ... 200을 출력하시오.
+        // for문을 통해 1 2 3 4 5 ... 200을 출력하시오.   -> 저는 그냥 method에 작성하겠습니다.
 
         String[] names = {"강미경", "김광호", "김규철", "김대웅", "김명규", "김민성", "김민효",
                 "김서준", "김선영", "김재원", "김종보", "김호섭", "노소정", "염진우", "예영근",
                 "이수원", "이진혁", "정선유", "제다정"};
 
         // for문을 통해 이름을 강미경 / 김광호 / 김규철 / 김대웅 ... / 제다정 으로 출력하시오.
+        // -> 저는 그냥 method에 작성하겠습니다.
 
         // printElem(배열) 형태로 메서드로 정의하시오. -> int배열과 String 배열에 다 사용할 수 있도록
         // method overloading도 적용하시오.
+        // 메서드 호출을 위한 객체 생성
+        Array06EnhancedFor array06EnhancedFor = new Array06EnhancedFor();
+        array06EnhancedFor.printElem(numbers);
+        array06EnhancedFor.printElem(names);
     }
+    public void printElem(int[] numbers) {
+        for ( int i = 0 ; i < numbers.length ; i++ ) {
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println();
+        for ( int number : numbers ) {
+            System.out.print(number + " ");
+        }
+        System.out.println();
+    }
+    public void printElem(String[] names) {
+        // 향상된 for문의 형식으로 작성하겠습니다.
+        //for (자료형 변수명 : 반복가능객체(배열))
+        for (String name : names) {
+            System.out.print(name + " / ");               // 출력문 쓰는 방법의 차이에 주목할 필요가 있습니다.
+        }
+
+    }
+
+
 }
