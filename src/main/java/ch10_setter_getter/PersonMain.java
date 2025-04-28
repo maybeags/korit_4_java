@@ -39,6 +39,8 @@ public class PersonMain {
 
         person1.getName2();
         person2.getName2();
+
+        System.out.println(person2);
     }
 }
 // ch11_access_modifier
