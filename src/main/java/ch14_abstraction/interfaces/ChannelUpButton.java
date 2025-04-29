@@ -7,7 +7,7 @@ public class ChannelUpButton extends Button{
     }
 
     @Override
-    public void onUp() {
-        System.out.println("채널을 계속 내립니다.");
+    public String onUp() {
+        return "채널을 계속 " + super.onUp();
     }
 }
