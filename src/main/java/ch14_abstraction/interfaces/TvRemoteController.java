@@ -41,9 +41,14 @@ public class TvRemoteController {
 
     public void onUpChannelUpButton() {
         System.out.print("TV의 ");
-        channelUpButton.onUp();
+        System.out.println(channelUpButton.onUp());;
     }
 
 //    VolumeDownButton / VolumeUpButton 클래스를 만들고 ChannelDown/Up과 같은 방식으로 작성하시오.
     // VolumeUpButton은 작성안하셔도 됩니다.
+    public void onPressedVolumeDownButton() {}
+    public void onDownVolumeDownButton() {}
+
+    public void onPressedVolumeUpButton() {}
+    public void onUpVolumeUpButton() {}
 }
