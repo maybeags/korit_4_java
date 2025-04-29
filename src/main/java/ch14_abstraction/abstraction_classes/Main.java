@@ -33,5 +33,13 @@ public class Main {
         PhoneFactory phoneFactory2 = new PhoneFactory();
         phoneFactory2.setName("삼성 스마트폰 공장");
         phoneFactory2.produce("갤럭시S 26");
+
+        // tabletFactory 부분 작성
+        TabletFactory tabletFactory1 = new TabletFactory();
+        tabletFactory1.setName("애플 태블릿 공장");
+        tabletFactory1.produce("아이패드 미니 6세대");
+        tabletFactory1.manage();
+        tabletFactory1.upgrade("아이패드 미니 7세대");
+        // interfaces
     }
 }

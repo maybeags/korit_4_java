@@ -11,9 +11,25 @@ package ch14_abstraction.abstraction_classes;
     4. produce() / manage() 메서드를 태블릿 공장에 맞게 적절히 수정할 것(PhoneFactory를 참조)
     5. Main으로 이동해서
         tabletFactory1 객체를 생성하고, 애플 태블릿 공장으로 이름 붙일 것.
-    6. produce()를 호출하시오.
+    6. produce("아이패드 미니 6세대")를 호출하시오.
     7. manage()를 호출하시오.
     8. upgrade("아이패드 미니 7세대")를 호출하시오.
  */
-public class TabletFactory {
+public class TabletFactory extends Factory{
+    @Override
+    public void produce(String model) {
+        System.out.println("[ " + model + " ] 태블릿을 생산합니다.");
+
+    }
+
+    @Override
+    public void manage() {
+        System.out.println("태블릿 공장을 관리합니다.");
+    }
+
+    // 고유메서드 작성
+    public void upgrade(String model) {
+        System.out.println(model + "으로 업그레이드합니다.");
+    }
+
 }
