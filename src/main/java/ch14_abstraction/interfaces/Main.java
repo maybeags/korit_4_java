@@ -3,7 +3,9 @@ package ch14_abstraction.interfaces;
 public class Main {
     public static void main(String[] args) {
         TvRemoteController tvRemoteController = new TvRemoteController(
-                new PowerButton(), new ChannelDownButton(), new ChannelUpButton()
+                new PowerButton(), new ChannelDownButton(), new ChannelUpButton(),
+                new VolumeDownButton(), new VolumeUpButton()
+
         );
         // 별개의 PowerButton 객체를 생성해서 메서드 호출이 가능한가?
         PowerButton powerButton = new PowerButton();
@@ -16,6 +18,10 @@ public class Main {
         tvRemoteController.onPressedChannelUpButton();
         tvRemoteController.onUpChannelUpButton();
 
-        VolumeDownButton volumeDownButton = new VolumeDownButton();
+//        VolumeDownButton volumeDownButton = new VolumeDownButton();
+        tvRemoteController.onPressedVolumeDownButton();
+        tvRemoteController.onDownVolumeDownButton();
+        tvRemoteController.onPressedVolumeUpButton();
+        tvRemoteController.onUpVolumeUpButton();
     }
     }
