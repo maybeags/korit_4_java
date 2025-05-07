@@ -5,11 +5,13 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import lombok.AllArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @AllArgsConstructor
+@ToString
 class User {
     private String username;
     private String password;
@@ -86,6 +88,16 @@ public class JSON2 {
         Map<String, String> map2 = gson.fromJson(productJson, Map.class);   // gsonBuilder.toJson(map1)이든 gson.toJson(map1)이든 상관없습니다.
         System.out.println(map2);
         // json -> User 클래스의 인스턴스로 바꾸는 방법
+
+        User user2 = gson.fromJson(userJson, User.class);
+        System.out.println(user2);
+
+        // json -> jsonObject : 이게 의미하는 바는 json데이터 =/= JsonObject입니다.
+        // studentJson의 자료형은 String이고 jsonObject1의 자료형은 JsonObject니까요.
+        JsonObject jsonObject2 = gson.fromJson(studentJson, JsonObject.class);
+        System.out.println(jsonObject2);
+
+        //ch22_exception
 
 
 
