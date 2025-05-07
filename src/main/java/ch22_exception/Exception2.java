@@ -32,3 +32,12 @@ public class Exception2 {
         }
     }
 }
+
+/*
+        String age = "123";
+        그럼 얘가 String이라서 수학 연산이 불가능합니다.
+        근데 Java의 특정 클래스의 특정 메서드는 저런 식으로 String
+        숫자 형태를 int로 바꿔주는 메서드도 있습니다.
+
+        그건 시험 문제
+ */
